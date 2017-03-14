@@ -97,8 +97,9 @@ public class Andrial2DAnimationHandler : MonoBehaviour {
 
     private bool CanAttack()
     {
-        if((!anim.GetCurrentAnimatorStateInfo(0).IsName(attackTrigger) && !showSwipe) || hitEnemy)
+        if(hitEnemy || (!anim.GetCurrentAnimatorStateInfo(0).IsName(attackTrigger) && !showSwipe))
         {
+            hitEnemy = false;
             return true;
         }
         return false;

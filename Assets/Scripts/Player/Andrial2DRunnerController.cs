@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Andrial2DRunnerController : MonoBehaviour {
 
-    [SerializeField] private float jumpForce;
+    [SerializeField] private float jumpVelocity;
     [SerializeField] private float groundCheckDistance;
 
     private Andrial2DAnimationHandler anim;
@@ -26,15 +26,19 @@ public class Andrial2DRunnerController : MonoBehaviour {
         if (Input.GetKeyDown(attackKey))
             anim.StartAttackAnim();
         if (Input.GetKeyDown(jumpKey))
-            Jump();
+            Jump(false);
 
         //Debug.DrawLine(transform.position - halfWidth, transform.position - halfWidth + Vector3.down * groundCheckDistance);
     }
 
-    private void Jump()
+    private void Jump(bool skipGroundCheck)
     {
-        if (IsGrounded())
-            rb.AddForce(Vector2.up * jumpForce);
+        if (skipGroundCheck || IsGrounded())
+        {
+            rb.velocity = Vector2.zero;
+            rb.velocity = Vector2.up * jumpVelocity;
+        }
+            
     }
 
     private bool IsGrounded()
@@ -45,5 +49,11 @@ public class Andrial2DRunnerController : MonoBehaviour {
             return true;
         else
             return false;
+    }
+
+    public void HitEnemy()
+    {
+        Jump(true);
+        anim.SetHitEnemy(true);
     }
 }
