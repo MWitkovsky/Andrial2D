@@ -16,7 +16,7 @@ public class Andrial2DAttackHitbox : MonoBehaviour {
         if (other.CompareTag(Tags.enemy))
         {
             other.GetComponent<EnemyHandler>().Kill(Vector3.Distance(player.transform.position, other.transform.position));
-            player.HitEnemy();
+            player.HitEnemy(!other.GetComponent<EnemyHandler>().IsGroundEnemy());
         }
     }
 }

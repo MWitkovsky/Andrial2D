@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 6e399d7eb1b775e4e94982f7c6febcae
+timeCreated: 1489525470
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - slimeParticle: {fileID: 21300008, guid: 0d2ffaae4e4ea6a49b310909fdaedbf3, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

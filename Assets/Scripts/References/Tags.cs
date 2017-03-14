@@ -13,4 +13,6 @@ public class Tags : MonoBehaviour {
     public static readonly string gameController = "GameController";
     public static readonly string enemy = "Enemy";
     public static readonly string corpse = "Corpse";
+    public static readonly string ground = "Ground";
+    public static readonly string item = "Item";
 }

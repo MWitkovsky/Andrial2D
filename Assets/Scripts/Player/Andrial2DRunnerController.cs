@@ -51,9 +51,10 @@ public class Andrial2DRunnerController : MonoBehaviour {
             return false;
     }
 
-    public void HitEnemy()
+    public void HitEnemy(bool wasAirEnemy)
     {
-        Jump(true);
+        if(wasAirEnemy)
+            Jump(true);
         anim.SetHitEnemy(true);
     }
 }
